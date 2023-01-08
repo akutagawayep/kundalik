@@ -9,7 +9,7 @@ app.use(express.json());
 
 const runServer = async () => {
   try {
-    await mongoose.connect();
+    await mongoose.connect(`mongodb+srv://sandrina:qwerty123@cluster0.pbcttom.mongodb.net/auth_roles?retryWrites=true&w=majority`);
 
 
     
