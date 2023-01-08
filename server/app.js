@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const authRouter = require("./authRouter");
+const postRouter = require("./postRouter");
 const port = 5000;
 
 app.use(express.json());
 app.use("/auth", authRouter);
+app.use("/homeworks", postRouter);
 
 const runServer = async () => {
   try {
