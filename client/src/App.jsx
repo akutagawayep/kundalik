@@ -4,7 +4,7 @@ import "./styles/App.scss";
 function App() {
   return (
     <div className="App">
-      Working
+      Work
       <HomePage />
     </div>
   );
