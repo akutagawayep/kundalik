@@ -1,7 +1,23 @@
-const Post = require("./models/Post");
+const PostHomework = require("./models/PostHomework");
 const User = require("./models/User");
+const Post = require("./models/Post");
 
 class postsController {
+  async postPost(req, res) {
+    try {
+      const { title, body } = req.body;
+      const post = new Post({
+        title,
+        body,
+      });
+
+      await post.save();
+      return res.json({ message: "Пост успешно опубликован" });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   async postHomework(req, res) {
     try {
       const { link, whose } = req.body;
@@ -35,6 +51,5 @@ class postsController {
     }
   }
 }
-
 
 module.exports = new postsController();
