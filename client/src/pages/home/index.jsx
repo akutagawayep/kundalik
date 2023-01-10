@@ -1,10 +1,28 @@
-import React from 'react'
-import s from "./homePage.module.scss"
+import axios from "axios";
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { authInstance } from "../../api/instances";
+import s from "./homePage.module.scss";
 
 const HomePage = () => {
-  return (
-    <div className={s.root}>Home</div>
-  )
-}
+  // const [users, setUsers] = useState([]);
+  // const getUsers = async () => {
+  //   const response = await  axios.get("http://localhost:5000/auth/users", {
+  //     headers:{
 
-export default HomePage
+  //     }
+  //   })
+  //   setUsers(response);
+  // };
+  // useEffect(() => {
+  //   getUsers();
+  // },[]);
+  // useEffect(() => {
+  //   console.log(users);
+  // }, );
+
+  return <div className={s.root}>Home</div>;
+};
+
+export default HomePage;
