@@ -33,10 +33,10 @@ class authController {
         password: hashPassword,
         roles,
       });
-      const token = generateAccessToken(user._id, username, user.roles)
+      const token = generateAccessToken(user._id, username, user.roles);
       await user.save();
 
-      return res.json({token});
+      return res.json({ token });
     } catch (e) {
       console.log(e);
       res.status(400).json({ message: "Registration error" });
@@ -68,9 +68,13 @@ class authController {
     }
   }
 
-  async check(req, res){
-    const token = generateAccessToken(req.user._id, req.user.username, req.user.roles)
-    return res.json({token})
+  async check(req, res) {
+    const token = generateAccessToken(
+      req.user._id,
+      req.user.username,
+      req.user.roles
+    );
+    return res.json({ token });
   }
 
   async getUsers(req, res) {

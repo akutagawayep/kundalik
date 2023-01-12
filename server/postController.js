@@ -20,7 +20,7 @@ class postsController {
 
   async postHomework(req, res) {
     try {
-      const { link, whose } = req.body;
+      const { link, whose} = req.body;
       const candidate = await User.findOne({ whose });
       if (candidate) {
         return res.status(400).json({
