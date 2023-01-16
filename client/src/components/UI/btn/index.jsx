@@ -1,9 +1,9 @@
 import React from 'react'
 import s from "./btn.module.scss"
 
-const Btn = () => {
+const Btn = (props) => {
   return (
-    <div>Btn</div>
+    <button className={s.root} style={props.bg}>{props.text}</button>
   )
 }
 

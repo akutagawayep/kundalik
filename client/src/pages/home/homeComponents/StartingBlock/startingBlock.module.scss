@@ -1,0 +1,38 @@
+.root {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  overflow-x: hidden;
+
+  .container {
+    width: 42%;
+    height: 100vh;
+
+    padding: 60px 80px ;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:space-around;
+
+    .title {
+      color: #201144;
+    }
+    .text {
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+  .imgContainer {
+    padding:0 25px;
+
+    background: #f8d455;
+
+    img {
+      height: 90vh;
+    }
+  }
+}
