@@ -5,6 +5,8 @@ import sumWoman from "./homeComponents/StartingBlock/img/sumWoman.png";
 import sumMen from "../home/homeComponents/StartingBlock/img/sumMen.png";
 import Statistics from "./homeComponents/Statistics";
 import Btn from "../../components/UI/btn";
+import Mentors from "./homeComponents/MentorsBlock";
+import Students from "./homeComponents/StudentsBlock";
 
 const HomePage = () => {
   const style = {
@@ -17,13 +19,13 @@ const HomePage = () => {
       <StartingBlock
         title="Are You Ready To Learn Something Great?"
         text="Not all mentors are created equal. The best mentors share some Qualities. You’ll want to look for these attributes"
-        btn={<Btn bg={{background:" #ff693a"}} text="Getting started ->" />}
+        btn={<Btn bg={{ background: " #ff693a" }} text="Getting started ->" />}
         img={sumWoman}
         contStyle={{
-          height: "90vh",
+          height: "690px",
           width: "500px",
         }}
-        imgStyle={{ height: "90vh" }}
+        imgStyle={{ height: "690px" }}
         titleStyle={{
           fontWeight: "700",
           fontSize: "70px",
@@ -33,21 +35,18 @@ const HomePage = () => {
       <Statistics />
       <StartingBlock
         title="Learn Anytime Anywhare"
-        text={
-          <p>
-            Not all mentors are created equal. The best mentors share some
+        text=" Not all mentors are created equal. The best mentors share some
             important Qualities. You’ll want to look for these attributes in
             anyone you’re thinking About building a mentor-mentee relationship
             with. And if you’re looking to be a better mentor yourself, these
             qualities are worth noting.
-            <br /> <br />
-            <br /> <br />
+
+
+
             Not all mentors are created equal. The best mentors share some
             important Qualities. You’ll want to look for these attributes in
             anyone you’re thinking About building a mentor-mentee relationship
-            with. And if you’re looking to be a better mentor yourself,
-          </p>
-        }
+            with. And if you’re looking to be a better mentor yourself,"
         img={sumMen}
         style={style}
         contStyle={{
@@ -55,14 +54,14 @@ const HomePage = () => {
           width: "450px",
         }}
         imgStyle={{ height: "450px" }}
-        titleStyle={
-          {
-            fontWeight: "700",
-            fontSize: "60px",
-            lineHeight: "60px",
-          }
-        }
+        titleStyle={{
+          fontWeight: "700",
+          fontSize: "60px",
+          lineHeight: "60px",
+        }}
       />
+      <Mentors />
+      <Students />
     </div>
   );
 };

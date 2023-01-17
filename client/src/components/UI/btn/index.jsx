@@ -3,7 +3,7 @@ import s from "./btn.module.scss"
 
 const Btn = (props) => {
   return (
-    <button className={s.root} style={props.bg}>{props.text}</button>
+    <button className={s.root} style={props.bg} onClick={props.onclick}>{props.text}</button>
   )
 }
 

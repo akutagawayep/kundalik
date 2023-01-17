@@ -1,0 +1,28 @@
+.slick-slider {
+  width: 1200px;
+  height: 300px;
+
+  padding: 50px 0;
+}
+.slick-arrow {
+  background: #ff693a !important;
+}
+
+.slick-prev {
+  width:40px;
+  height:40px;
+
+  top: -50px;
+  left: 95% !important;
+}
+.slick-next {
+  width:40px;
+  height:40px;
+
+  top: -50px;
+  right: -2.5% !important;
+}
+
+@media (max-width:1260px) {
+  
+}

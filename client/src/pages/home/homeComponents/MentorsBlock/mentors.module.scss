@@ -1,0 +1,19 @@
+.root {
+  width: 100%;
+  min-height: 600px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #f9f9f9;
+  .container {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+}
