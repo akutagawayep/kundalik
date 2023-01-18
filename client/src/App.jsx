@@ -1,11 +1,12 @@
 import HomePage from "./pages/home";
+import AuthorizedPage from "./pages/profile";
 import "./styles/App.scss";
 
 function App() {
   return (
     <div className="App">
-      Work
-      <HomePage />
+      {/* <HomePage /> */}
+      <AuthorizedPage/>
     </div>
   );
 }
