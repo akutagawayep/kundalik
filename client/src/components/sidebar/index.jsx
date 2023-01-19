@@ -7,6 +7,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const classes = [`${s.navBar}`];
+  const classesIcon = [`${s.icon}`]
 
   const open = () => {
     setIsOpen(!isOpen);
@@ -14,6 +15,7 @@ const Sidebar = () => {
 
   if (isOpen) {
     classes.push(`${s.open}`);
+    classesIcon.push(`${s.close}`)
   }
 
   return (
@@ -23,7 +25,7 @@ const Sidebar = () => {
       </div>
       <div className={classes.join(" ")} onClick={open}>
         <nav className={s.inner} onClick={e => e.preventDefault()}>
-        <div className={s.icon} onClick={open}>
+        <div className={classesIcon.join(" ")} onClick={open}>
         <span></span>
       </div>
           <NavLink to="/home" className={s.item}>

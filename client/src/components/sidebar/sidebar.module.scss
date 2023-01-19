@@ -39,6 +39,22 @@
     }
   }
 
+  .close{
+    span{
+      display: none;
+    }
+
+    &::after{
+      transform: rotate(45deg);
+      top: 10px;
+    }
+
+    &::before{
+      transform: rotate(-45deg);
+      top: 10px;
+    }
+  }
+
   .navBar {
     position: absolute;
     top: 0;
