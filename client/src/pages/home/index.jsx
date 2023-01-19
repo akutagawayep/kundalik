@@ -13,7 +13,7 @@ const HomePage = () => {
 
       }
     })
-    setUsers(response);
+    setUsers(response.data);
   };
   useEffect(() => {
     getUsers();

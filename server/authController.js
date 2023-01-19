@@ -5,8 +5,8 @@ const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const { secret } = require("./config");
 
-const generateAccessToken = (id, roles) => {
-  const payload = { id, roles };
+const generateAccessToken = (id, username, roles) => {
+  const payload = { id, username, roles };
   return jwt.sign(payload, secret, { expiresIn: "24h" });
 };
 
@@ -18,7 +18,7 @@ class authController {
         return res.status(400).json({ message: "Значения не введены" });
       }
 
-      const { username, password } = req.body;
+      const { username, password, roles } = req.body;
       const candidate = await User.findOne({ username });
 
       if (candidate) {
@@ -28,15 +28,15 @@ class authController {
       }
 
       const hashPassword = bcrypt.hashSync(password, 7);
-      const userRole = await Role.findOne({ value: "USER" });
       const user = new User({
         username,
         password: hashPassword,
-        roles: [userRole.value],
+        roles,
       });
+      const token = generateAccessToken(user._id, username, user.roles);
       await user.save();
 
-      return res.json({ message: "Пользователь зарегистрирован успешно" });
+      return res.json({ token });
     } catch (e) {
       console.log(e);
       res.status(400).json({ message: "Registration error" });
@@ -60,12 +60,21 @@ class authController {
         });
       }
 
-      const token = generateAccessToken(user._id, user.roles);
+      const token = generateAccessToken(user._id, username, user.roles);
       return res.json({ token });
     } catch (e) {
       console.log(e);
       res.status(400).json({ message: "Login error" });
     }
+  }
+
+  async check(req, res) {
+    const token = generateAccessToken(
+      req.user._id,
+      req.user.username,
+      req.user.roles
+    );
+    return res.json({ token });
   }
 
   async getUsers(req, res) {

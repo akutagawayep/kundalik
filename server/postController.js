@@ -1,15 +1,31 @@
-const Post = require("./models/Post");
+const PostHomework = require("./models/PostHomework");
 const User = require("./models/User");
+const Post = require("./models/Post");
 
 class postsController {
+  async postPost(req, res) {
+    try {
+      const { title, body } = req.body;
+      const post = new Post({
+        title,
+        body,
+      });
+
+      await post.save();
+      return res.json({ message: "Пост успешно опубликован" });
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   async postHomework(req, res) {
     try {
-      const { link, whose } = req.body;
+      const { link, whose} = req.body;
       const candidate = await User.findOne({ whose });
       if (candidate) {
         return res.status(400).json({
           message:
-            "Пользователь с таким именем уже не существует, введите такой же ник какой у вас в профиле",
+            "Пользователь с таким именем  не существует, введите такой же ник какой у вас в профиле",
         });
       }
 
@@ -35,6 +51,5 @@ class postsController {
     }
   }
 }
-
 
 module.exports = new postsController();
