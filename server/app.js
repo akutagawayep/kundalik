@@ -3,7 +3,11 @@ const app = express();
 const mongoose = require("mongoose");
 const authRouter = require("./authRouter");
 const postRouter = require("./postRouter");
+const cors = require("cors");
+const port = process.env.port || 5000;
 
+app.use(express.json());
+app.use(cors());
 app.use("/auth", authRouter);
 app.use("/homeworks", postRouter);
 
