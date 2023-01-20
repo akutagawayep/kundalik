@@ -5,4 +5,12 @@
     font-size: 40px;
     color: #16172B;
   }
+  
+  @media (max-width: 1050px) {
+    & {
+      padding: 85px;}}
+      
+  @media (max-width: 650px) {
+    & {
+      padding: 25px;}}
 }

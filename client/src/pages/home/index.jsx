@@ -1,6 +1,5 @@
 import React from "react";
 import StartingBlock from "./homeComponents/StartingBlock";
-import s from "./homePage.module.scss";
 import sumWoman from "../../assets/img/sumWoman.png";
 import sumMen from "../../assets/img/sumMen.png";
 import Statistics from "./homeComponents/Statistics";
@@ -16,7 +15,7 @@ const HomePage = () => {
     alignItems: "center",
   };
   return (
-    <div className={s.root}>
+    <div >
       <StartingBlock
         title="Are You Ready To Learn Something Great?"
         text="Not all mentors are created equal. The best mentors share some Qualities. You’ll want to look for these attributes"

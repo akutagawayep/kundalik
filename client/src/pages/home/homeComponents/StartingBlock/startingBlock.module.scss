@@ -5,13 +5,14 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  // overflow-x: hidden;
 
   .container {
-    width: 560px;
+    width: 50%;
     height: 700px;
 
-    padding: 60px 80px;
+    padding-top: 80px;
+    padding-left: 60px;
+    padding-right: 0;
 
     display: flex;
     flex-direction: column;
@@ -30,6 +31,8 @@
     }
   }
   .imgContainer {
+    width: 50%;
+
     padding: 0 25px;
 
     background: #f8d455;
@@ -37,6 +40,96 @@
     img {
       width: 100%;
       height: 700px;
+    }
+  }
+
+  @media (max-width: 1050px) {
+    & {
+      max-height: 600px;
+      .container {
+        padding: 40px 60px;
+
+        height: 600px;
+
+        .title {
+          font-size: 50px;
+          line-height: 60px;
+        }
+      }
+
+      .imgContainer {
+        max-width: 50%;
+        max-height: 500px;
+        img {
+          width: 90%;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+  @media (max-width: 750px) {
+    & {
+      max-height: 500px;
+      .container {
+        height: 500px;
+
+        .title {
+          font-size: 40px;
+          line-height: 35px;
+        }
+
+        .text {
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+
+      .imgContainer {
+        max-width: 50%;
+        max-height: 450px;
+      }
+    }
+  }
+
+  @media (max-width: 650px) {
+    & {
+      .container {
+        .title {
+          font-size: 30px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 550px) {
+    & {
+      height: 450px;
+      .imgContainer {
+        max-width: 50%;
+        max-height: 400px;
+        img {
+          min-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 550px) {
+    & {
+      .container {
+        width: 100%;
+
+        .title {
+          font-size: 40px;
+          line-height: 45px;
+        }
+      }
+      .imgContainer {
+        display: none;
+        
+      }
     }
   }
 }

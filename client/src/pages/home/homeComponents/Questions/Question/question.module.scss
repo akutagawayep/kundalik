@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 
   h3 {
     width: 30%;
@@ -19,8 +20,8 @@
     height: 125px;
 
     display: flex;
-    align-items: center;
-    gap: 50px;
+    align-items:center;
+    gap: 30px;
     .ans {
       width: 80px;
       height: 30px;
@@ -39,8 +40,24 @@
       h3 {
         width: 100%;
       }
-      .container{
+      .container {
         width: 100%;
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    & {
+      height: 300px;
+      h3 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+      
+      .container {
+        align-items: start;
+        max-height: 280px;
+        width: 100%;
+        overflow: hidden;
       }
     }
   }
