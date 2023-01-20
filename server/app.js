@@ -11,6 +11,7 @@ app.use(cors());
 app.use("/auth", authRouter);
 app.use("/homeworks", postRouter);
 
+mongoose.set("strictQuery", false);
 const runServer = async () => {
   try {
     await mongoose.connect(
