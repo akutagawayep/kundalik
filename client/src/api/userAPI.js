@@ -22,6 +22,6 @@ export const check = async () => {
 };
 
 export const addHomework = async (title, body) => {
-  const response = await homeworksInstance.post("/post", {title, body})
-  return response
-}
+  const response = await homeworksInstance.post("/post", { title, body });
+  return response;
+};

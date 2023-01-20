@@ -1,6 +1,10 @@
-import { createStore } from "redux";
-import reducer from "./reducer";
+import { combineReducers } from "redux";
+import { homeworkReducer, postsReducer, userReducer } from "./reducers";
 
-const store = createStore(reducer)
+const store = combineReducers({
+  homework: homeworkReducer,
+  user: userReducer,
+  posts: postsReducer,
+});
 
-export default store
+export default store;
