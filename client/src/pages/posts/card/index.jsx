@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import s from "./card.module.scss"
 
 const CardItem = ({title, body, ...props}) => {
@@ -7,7 +8,7 @@ const CardItem = ({title, body, ...props}) => {
         <span></span>
         <div className={s.title}>{title}</div>
         <div className={s.body}>{body}</div>
-        <button>Open</button>
+        <NavLink to={"/homeworks/:id"} className={s.btn}>Open</NavLink>
     </div>
   )
 }

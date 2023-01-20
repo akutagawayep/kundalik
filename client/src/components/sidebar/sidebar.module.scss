@@ -5,6 +5,8 @@
 
   background-color: #201144;
 
+  position: fixed;
+  z-index: 10000000;
 
   .icon {
     position: relative;
@@ -39,17 +41,17 @@
     }
   }
 
-  .close{
-    span{
+  .close {
+    span {
       display: none;
     }
 
-    &::after{
+    &::after {
       transform: rotate(45deg);
       top: 10px;
     }
 
-    &::before{
+    &::before {
       transform: rotate(-45deg);
       top: 10px;
     }
@@ -62,11 +64,13 @@
     bottom: 0;
     left: 0;
 
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 10000000;
 
     transform: translateX(-100%);
-    background-color: rgba(0, 0, 0, 0.163);
+    background-color: rgba(0, 0, 0, 0.555);
 
     transition: 0.2s;
 
@@ -81,14 +85,13 @@
     position: relative;
 
     height: 100vh;
-    width: 20%;
+    width: 250px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 
     background-color: #201144;
     padding: 15px 20px;
-
 
     font-size: 20px;
 
@@ -101,8 +104,9 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
   .root {
-    padding: 15px 50px;
+    width: 60px;
+    padding: 15px;
   }
 }

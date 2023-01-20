@@ -1,14 +1,22 @@
 .root {
   padding: 20px 30px;
-  border: 1px solid #201144;
-  img {
+  border: 1.5px solid #201144;
+  .imgUser {
     width: 200px;
     height: 200px;
+
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover{
+      border: 1px solid #FF693A;
+    }
   }
 
   .name {
-    font-size: 20px;
+    font-size: 23px;
     text-align: center;
+    color: #FF693A;
   }
 
   .role{

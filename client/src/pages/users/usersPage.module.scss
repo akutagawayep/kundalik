@@ -1,12 +1,48 @@
-.root{
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+
+  padding: 20px 20px 20px 100px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 39px;
+    color: #201144;
+  }
+
+  .users {
+    width: 100%;
+
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: start;
     flex-wrap: wrap;
-    gap: 30px;
-    
-    padding: 20px;
+    gap: 40px;
+  }
+}
 
-    max-width: 1200px;
-    margin: 0 auto;
+@media (max-width: 600px) {
+  .root{
+  padding: 20px 20px 20px 80px;
+
+    h1{
+      font-size: 35px;
+    }
+  }
+  
+}
+@media (max-width: 400px) {
+  .root{
+  padding: 20px 20px 20px 60px;
+
+    h1{
+      font-size: 35px;
+    }
+  }
+  
 }

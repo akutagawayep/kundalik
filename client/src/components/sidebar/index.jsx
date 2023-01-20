@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import {NavLink} from "react-router-dom"
+import { ACCOUNT_ROUTE, ADMIN_ROUTE, HOMEWORKS_ROUTE, USERS_ROUTE } from "../../utils/consts";
 import s from "./sidebar.module.scss";
 
 const Sidebar = () => {
@@ -28,17 +29,17 @@ const Sidebar = () => {
         <div className={classesIcon.join(" ")} onClick={open}>
         <span></span>
       </div>
-          <NavLink to="/home" className={s.item}>
+          <NavLink to={ACCOUNT_ROUTE} className={s.item}>
             Мой профиль
           </NavLink>
-          <NavLink to="/homeworks" className={s.item}>
+          <NavLink to={HOMEWORKS_ROUTE} className={s.item}>
             Домашние задания
           </NavLink>
-          <NavLink to="/users" className={s.item}>
+          <NavLink to={USERS_ROUTE} className={s.item}>
             Пользователи
           </NavLink>
-          <NavLink to="/main" className={s.item}>
-            Домой
+          <NavLink to={ADMIN_ROUTE} className={s.item}>
+            Создать домашку
           </NavLink>
         </nav>
       </div>

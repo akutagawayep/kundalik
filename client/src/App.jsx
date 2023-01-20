@@ -1,12 +1,17 @@
-import HomePage from "./pages/home";
-
+import AppRouter from "./components/router";
+import Sidebar from "./components/sidebar"
 import "./styles/App.scss";
 
 function App() {
+
+  const isAuth = true;
+
   return (
     <div className="App">
-      {/* <HomePage /> */}
-
+      <div className="AppAuth">
+        {isAuth && <Sidebar/>}
+        <AppRouter/>
+      </div>
     </div>
   );
 }
