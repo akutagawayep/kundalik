@@ -61,15 +61,17 @@ class postsController {
   }
   async putGrade(req, res) {
     try {
-      const { whose, score, link } = req.body;
+      const { whose, score, link, homework } = req.body;
       const homewrok = await PostHomework.findOne({ whose, link });
 
       const updated = {
         whose,
         score,
         link,
+        homework,
       };
-      homewrok.overwrite(updated);
+      await homewrok.replaceOne(updated);
+      res.json({ message: "Оценка сохранена" });
     } catch (e) {
       console.log(e);
       res.json({ message: "Error message no:", e });
