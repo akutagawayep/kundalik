@@ -1,7 +1,4 @@
-export const fetching = (value) => ({type: "LOADING"})
-export const fetchedUsers = (value) => ({type: "USERS_FETCHED", payload: value })
-export const fetchedPosts = (value) => ({type: "POSTS_FETCHED", payload: value })
-export const fetchingError = (value) => ({type: "FETCHING_ERROR"})
+
 export const addPost = (value) => ({type: "ADD_POST", payload: value })
 export const addUser = (value) => ({type: "ADD_USER", payload: value })
 // export const userDetail = (value) => ({type: "USER_DETAIL_FETCHED", payload: value })

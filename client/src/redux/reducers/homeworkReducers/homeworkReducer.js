@@ -1,8 +1,6 @@
 const initialState = {
     studentHomeWorks: [],
-    
     fulfied: false,
-
 }
 
 export const homeworkReducer = ()=>{
