@@ -1,12 +1,13 @@
 import React from "react";
 import StartingBlock from "./homeComponents/StartingBlock";
 import s from "./homePage.module.scss";
-import sumWoman from "./homeComponents/StartingBlock/img/sumWoman.png";
-import sumMen from "../home/homeComponents/StartingBlock/img/sumMen.png";
+import sumWoman from "../../assets/img/sumWoman.png";
+import sumMen from "../../assets/img/sumMen.png";
 import Statistics from "./homeComponents/Statistics";
 import Btn from "../../components/UI/btn";
 import Mentors from "./homeComponents/MentorsBlock";
 import Students from "./homeComponents/StudentsBlock";
+import Questions from "./homeComponents/Questions";
 
 const HomePage = () => {
   const style = {
@@ -26,11 +27,7 @@ const HomePage = () => {
           width: "500px",
         }}
         imgStyle={{ height: "690px" }}
-        titleStyle={{
-          fontWeight: "700",
-          fontSize: "70px",
-          lineHeight: "80px",
-        }}
+      
       />
       <Statistics />
       <StartingBlock
@@ -39,14 +36,7 @@ const HomePage = () => {
             important Qualities. You’ll want to look for these attributes in
             anyone you’re thinking About building a mentor-mentee relationship
             with. And if you’re looking to be a better mentor yourself, these
-            qualities are worth noting.
-
-
-
-            Not all mentors are created equal. The best mentors share some
-            important Qualities. You’ll want to look for these attributes in
-            anyone you’re thinking About building a mentor-mentee relationship
-            with. And if you’re looking to be a better mentor yourself,"
+            qualities are worth noting."
         img={sumMen}
         style={style}
         contStyle={{
@@ -62,6 +52,7 @@ const HomePage = () => {
       />
       <Mentors />
       <Students />
+      <Questions/>
     </div>
   );
 };

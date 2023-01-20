@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slide from "./Slide/index";
-import sumMen from "../StartingBlock/img/sumMen.png";
+import sumMen from "../../../../assets/img/sumMen.png";
 import "./slider.scss";
 
 const Students = () => {

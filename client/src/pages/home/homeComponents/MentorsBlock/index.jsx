@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import s from "./mentors.module.scss";
-import whiteMan from "./img/whiteMan.png";
+import whiteMan from "../../../../assets/img/whiteMan.png";
 
 const Mentors = () => {
   return (
