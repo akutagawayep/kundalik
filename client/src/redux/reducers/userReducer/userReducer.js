@@ -1,11 +1,11 @@
 const initialState = {
   users: [],
   isAuth: false,
-  userCredential: {},
+  loading: 'idle'
 };
 
-const LOGIN = "LOGIN";
-const REGISTRATION = "REGISTRATION";
+const USERS_FETCHED = "USERS_FETCHED";
+const USERS_FETCHING = 'USERS_FETCHING'
 
 export const userReducer = (state = initialState, action) => {
   switch (action.type) {
