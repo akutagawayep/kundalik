@@ -1,20 +1,46 @@
-.root{
-    padding: 20px 100px;
+.root {
+  padding: 20px 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  .inf {
+    img {
+      width: 300px;
+      height: auto;
+
+      margin-bottom: 10px;
+    }
+
+    .name {
+      color: #ff693a;
+      font-weight: bold;
+      font-size: 35px;
+    }
+
+    .role {
+      font-size: 20px;
+    }
+  }
+
+
+
+  .hws{
     display: flex;
-    gap: 30px;
-    img{
-        width: 300px;
-        height: auto;
-    }
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 
-    .name{
-        color: #FF693A;
-        font-weight: bold;
-        font-size: 30px;
+@media (max-width: 465px) {
+    .root{
+        padding: 20px 80px;
+        padding-right: 10px;
     }
-
-    .role{
-        font-size: 20px;
+}
+@media (max-width: 400px) {
+    .root{
+        padding: 20px 65px;
+        padding-right: 0;
     }
-
 }

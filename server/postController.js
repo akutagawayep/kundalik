@@ -57,10 +57,11 @@ class postsController {
   }
   async putGrade(req, res) {
     try {
-      const { whose, score, link, homework } = req.body;
-      const homewrok = await PostHomework1.findOne({ whose, link });
+      const { whose, score, link, homework, id } = req.body;
+      const homewrok = await PostHomework1.findOne({ id });
 
       const updated = {
+        id,
         whose,
         score,
         link,

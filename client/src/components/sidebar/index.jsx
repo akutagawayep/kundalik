@@ -69,7 +69,7 @@ const Sidebar = () => {
             Пользователи
           </NavLink>
           {isAdmin && (
-            <div>
+            <div style={{display: "flex", flexDirection: "column", gap: 20}}>
               <NavLink to={ADMIN_ROUTE} className={s.item}>
                 Создать домашку
               </NavLink>

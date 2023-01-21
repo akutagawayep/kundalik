@@ -2,7 +2,7 @@ import { authHost, homeworksInstance, host } from "./instances";
 import jwt_decode from "jwt-decode";
 import { authInstance } from "./instances";
 
-export const registrationFn = async (username, password, roles = "ADMIN") => {
+export const registrationFn = async (username, password, roles = "USER") => {
   const { data } = await authInstance.post("/registration", {
     username,
     password,

@@ -1,0 +1,23 @@
+.root{
+    padding: 30px 120px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@media (max-width: 550px) {
+    .root {
+
+        padding: 30px 100px;
+        padding-right: 40px;
+    }
+  }
+
+@media (max-width: 420px) {
+    .root {
+
+        padding: 30px 80px;
+        padding-right: 10px;
+    }
+  }
