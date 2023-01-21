@@ -7,6 +7,8 @@ import Btn from "../../components/UI/btn";
 import Mentors from "./homeComponents/MentorsBlock";
 import Students from "./homeComponents/StudentsBlock";
 import Questions from "./homeComponents/Questions";
+import Footer from "../../components/footer";
+import Header from "../../components/header";
 
 const HomePage = () => {
   const style = {
@@ -15,7 +17,8 @@ const HomePage = () => {
     alignItems: "center",
   };
   return (
-    <div >
+    <React.Fragment>
+      <Header />
       <StartingBlock
         title="Are You Ready To Learn Something Great?"
         text="Not all mentors are created equal. The best mentors share some Qualities. You’ll want to look for these attributes"
@@ -26,7 +29,7 @@ const HomePage = () => {
           width: "500px",
         }}
         imgStyle={{ height: "690px" }}
-      
+        id="start"
       />
       <Statistics />
       <StartingBlock
@@ -48,11 +51,13 @@ const HomePage = () => {
           fontSize: "60px",
           lineHeight: "60px",
         }}
+        id="about"
       />
       <Mentors />
       <Students />
-      <Questions/>
-    </div>
+      <Questions />
+      <Footer />
+    </React.Fragment>
   );
 };
 

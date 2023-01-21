@@ -4,7 +4,7 @@ import s from "./questions.module.scss";
 
 const Questions = () => {
   return (
-    <div className={s.root}>
+    <div id="questions" className={s.root}>
       <h2>Frequently Asked Questions</h2>
       <Question
         question="How to inroll course? "
