@@ -3,6 +3,8 @@
 
   width: 100%;
   height: 70px;
+
+  background: #f6f6f6;
   .container {
     width: 100%;
     height: 70px;
@@ -18,20 +20,51 @@
       text-decoration: none;
     }
   }
-    @media (max-width:700px) {
-        &{
+  @media (max-width: 550px) {
+    & {
+      .btn {
+        width: 45px;
+        height: 45px;
 
-            .btn{
-                width: 45px;
-                height: 45px;
+        top: 5px;
+        right: 5px;
 
-                span{
-                    width: 45px;
-                    height: 2px;
-                    
-                    color: #000;
-                }
-            }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        span {
+          position: static;
+
+          width: 30px;
+          height: 3px;
+
+          background: #ff693a;
         }
+      }
+      .container {
+        display: none;
+        &.open {
+          max-width: 40%;
+          height: 100vh;
+
+          position: fixed;
+          z-index: 2000000000000000000000;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: center;
+          gap: 15px;
+
+          background: #f6f6f6;
+
+          a {
+            color: #ff693a;
+            text-decoration: none;
+          }
+        }
+      }
     }
+  }
 }
