@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import s from "./Header.module.scss";
+import s from "./header.module.scss";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
