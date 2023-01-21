@@ -1,15 +1,17 @@
 const initialState = {
-    studentHomeWorks: [],
-    fulfied: false,
-}
+  studentHomeWorks: [],
+  fulfied: false,
+};
 
-export const homeworkReducer = ()=>{
-    switch (key) {
-        case value:
-            
-            break;
-    
-        default:
-            break;
-    }
-}
+const homeworkReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "FETCH_HOMEWORKS":
+      break;
+    case "FETCHING_HOMEWORKS":
+      break;
+    default:
+      break;
+  }
+};
+
+export default homeworkReducer;

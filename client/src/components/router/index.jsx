@@ -6,18 +6,19 @@ import { MAIN_ROUTE } from "../../utils/consts";
 
 const AppRouter = () => {
   // const isAuth = useSelector(state => state.isAuth);
-  const isAuth = true
+  const isAuth = true;
 
   return (
     <Routes>
-      {isAuth && authRoutes.map(({ path, element }) => (
-        <Route key={path} path={path} element={element} />
-      ))}
-      
+      {isAuth &&
+        authRoutes.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
+
       {publicRoutes.map(({ path, element }) => (
         <Route key={path} path={path} element={element} />
       ))}
-      <Route path='*' element={<Navigate to={MAIN_ROUTE}/>}/>
+      <Route path="*" element={<Navigate to={MAIN_ROUTE} />} />
     </Routes>
   );
 };
