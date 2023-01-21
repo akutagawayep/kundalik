@@ -1,0 +1,147 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 15px 70px;
+
+  background-color: #f6f6f664;
+
+  position: fixed;
+
+  .logo {
+    display: flex;
+    gap: 30px;
+    font-size: 25px;
+    color: #201144;
+
+    font-weight: bold;
+
+    span {
+      color: #ff693a;
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: #201144;
+    }
+
+    .login {
+      font-size: 16px;
+
+      padding: 5px 20px;
+      background-color: #201144;
+      color: #fff;
+      text-decoration: none;
+      border: 1.5px solid transparent;
+
+      transition: 0.2s;
+
+      &:hover {
+        color: #201144;
+        background-color: transparent;
+        border-color: #201144;
+      }
+    }
+  }
+
+  .icon {
+    position: relative;
+    height: 20px;
+
+    cursor: pointer;
+
+    span,
+    &::after,
+    &::before {
+      width: 30px;
+      height: 3px;
+
+      content: "";
+      display: block;
+
+      background-color: #201144;
+      position: absolute;
+    }
+
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  .navBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    transform: translateX(-100%);
+
+    background-color: rgba(0, 0, 0, 0.401);
+
+    transition: 0.2s;
+
+    &.open {
+      display: flex;
+      z-index: 100000;
+      transform: translateX(0);
+    }
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background-color: #201144;
+    padding: 30px 150px 20px 50px;
+
+    font-size: 20px;
+
+    z-index: 100000;
+
+    .item {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .root {
+    padding: 15px 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .root {
+    .logo {
+      span {
+        display: none;
+      }
+
+      a {
+        display: none;
+      }
+
+      .login{
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.root{
+    padding: 10px 100px;
+    color: #fff;
+    background-color: #FF693A;
+    border: 1.5px solid transparent;
+    font-weight: bold;
+
+    transition: .2s;
+
+    text-decoration: none;
+
+    &:hover{
+        background-color: transparent;
+        border-color: #FF693A;
+        color: #FF693A;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .root {
+
+        padding: 10px 50px;
+    }
+  }
+  

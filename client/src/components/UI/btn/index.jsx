@@ -1,9 +1,10 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import s from "./btn.module.scss"
 
-const Btn = () => {
+const Btn = ({to, children}) => {
   return (
-    <div>Btn</div>
+    <NavLink to={to} className={s.root} >{children}</NavLink>
   )
 }
 
