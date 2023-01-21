@@ -11,8 +11,14 @@ const CardItem = ({ title, body, ...props }) => {
   const user = jwtDecode(localStorage.getItem("token"));
 
   const addUserHW = async (link) => {
+    console.log(title, link, user.username);
 
-    const request = await addUserHomework(link, title, user.username)
+    const request = await addUserHomework({
+      homework: title,
+      link,
+      whose: user.username,
+    });
+
     console.log(request);
   };
 

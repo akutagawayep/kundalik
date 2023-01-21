@@ -1,4 +1,4 @@
-const PostHomework = require("./models/PostHomework");
+const PostHomework1 = require("./models/PostHomework");
 const User = require("./models/User");
 const Post = require("./models/Post");
 
@@ -21,18 +21,13 @@ class postsController {
   async postHomework(req, res) {
     try {
       const { link, whose, homework } = req.body;
-      // const candidate = await User.findOne({ whose });
-      // if (!) {
-      //   return res.status(400).json({
-      //     message:
-      //       "Пользователь с таким именем  не существует, введите такой же ник какой у вас в профиле",
-      //   });
-      // }
-
-      const homewrok = new PostHomework({
+   
+      const lenght = (await PostHomework1.find()).length
+      const homewrok = new PostHomework1({
+        id: lenght,
         link: link,
         whose: whose,
-        homework: homework
+        homework: homework,
       });
 
       await homewrok.save();
@@ -53,7 +48,7 @@ class postsController {
   }
   async getUsersHomework(req, res) {
     try {
-      const userhomeworks = await PostHomework.find();
+      const userhomeworks = await PostHomework1.find();
       res.json(userhomeworks);
     } catch (e) {
       console.log(e);
@@ -63,7 +58,7 @@ class postsController {
   async putGrade(req, res) {
     try {
       const { whose, score, link, homework } = req.body;
-      const homewrok = await PostHomework.findOne({ whose, link });
+      const homewrok = await PostHomework1.findOne({ whose, link });
 
       const updated = {
         whose,

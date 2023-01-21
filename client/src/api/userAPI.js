@@ -29,7 +29,7 @@ export const addHomework = async (title, body) => {
   return response;
 };
 
-export const addUserHomework = async (link, homework, whose) => {
+export const addUserHomework = async ({link, homework, whose}) => {
   const response = await homeworksInstance.post("/send", { link, homework, whose});
   return response;
 };
