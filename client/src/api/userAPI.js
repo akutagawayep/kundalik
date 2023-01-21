@@ -8,16 +8,19 @@ export const registrationFn = async (username, password, roles = "USER") => {
     password,
     roles,
   });
+  localStorage.setItem("token", data.token)
   return jwt_decode(data.token);
 };
 
 export const loginFn = async (username, password) => {
   const { data } = await authInstance.post("/login", { username, password });
+  localStorage.setItem("token", data.token)
   return jwt_decode(data.token);
 };
 
 export const check = async () => {
-  const { data } = await authInstance.post("/check");
+  const { data } = await authHost.get("/check");
+  localStorage.setItem("token", data.token)
   return jwt_decode(data.token);
 };
 

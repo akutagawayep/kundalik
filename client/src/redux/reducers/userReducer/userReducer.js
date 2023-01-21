@@ -7,6 +7,7 @@ const USERS_FETCHED = "USERS_FETCHED";
 const USERS_FETCHING = "USERS_FETCHING";
 const ADD_USER = "ADD_USER";
 
+
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case USERS_FETCHING:
@@ -21,8 +22,8 @@ const userReducer = (state = initialState, action) => {
     case "ERROR":
       return {
         ...state,
-        loading: "error",
-      };
+        loading: "error",}
+
     default:
       return state;
   }

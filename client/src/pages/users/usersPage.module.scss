@@ -26,23 +26,28 @@
   }
 }
 
-@media (max-width: 600px) {
-  .root{
-  padding: 20px 20px 20px 80px;
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-    h1{
+@media (max-width: 600px) {
+  .root {
+    padding: 20px 20px 20px 80px;
+
+    h1 {
       font-size: 35px;
     }
   }
-  
 }
 @media (max-width: 400px) {
-  .root{
-  padding: 20px 20px 20px 60px;
+  .root {
+    padding: 20px 20px 20px 60px;
 
-    h1{
+    h1 {
       font-size: 35px;
     }
   }
-  
 }

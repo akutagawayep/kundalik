@@ -26,6 +26,13 @@
   }
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 @media (max-width: "900px") {
   .root{
   padding: 20px 20px 20px 80px;

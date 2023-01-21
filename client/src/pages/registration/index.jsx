@@ -5,10 +5,8 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import s from "./registrationPage.module.scss";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../../utils/consts";
 import Inpt from "../../components/UI/input";
-import img1 from "../../assets/img/regPage.jpg";
-import img2 from "../../assets/img/regPage2.jpg";
 import { useDispatch } from "react-redux";
-// import { addUser, login } from "../../redux/actions";
+import { addUser, login } from "../../redux/actions";
 
 const RegistartionPage = () => {
   const location = useLocation();
@@ -16,21 +14,23 @@ const RegistartionPage = () => {
   const isLogin = location.pathname === LOGIN_ROUTE;
 
   const [user, setUser] = useState({ username: "", password: "" });
-  // const [radioValue, setRadioValue] = useState("USER");
 
   const dispatch = useDispatch();
 
-  const signIn = async (e) => {
-    e.preventDefault();
+  const signIn = async () => {
     try {
       let data;
       if (isLogin) {
         data = await loginFn(user.username, user.password);
-        // dispatch(login(data))
-        navigate("/profile")
+        dispatch(login(data));
+        window.location.reload();
+        navigate("/profile");
       } else {
-        const data = await registrationFn(user.username, user.password);
-        // dispatch(addUser(user));
+        data = await registrationFn(user.username, user.password);
+        dispatch(addUser(user));
+        dispatch(login(data));
+        window.location.reload();
+        navigate("/profile");
       }
     } catch (e) {
       alert(e.message);
@@ -39,12 +39,7 @@ const RegistartionPage = () => {
 
   return (
     <div className={s.root}>
-      {isLogin && (
-        <div className={s.block}>
-          {/* <img src={img2} alt="" />
-        <p>C нами всегда проще</p> */}
-        </div>
-      )}
+      {isLogin && <div className={s.block}></div>}
       <form>
         <h2>{isLogin ? "Авторизуйся" : "Зарегистрируйся"}</h2>
         <Inpt
@@ -56,25 +51,9 @@ const RegistartionPage = () => {
         <Inpt
           type="text"
           value={user.password}
-          onChange={(e) => setUser({...user, password: e.target.value })}
+          onChange={(e) => setUser({ ...user, password: e.target.value })}
           placeholder="Ваш пароль"
         />
-        {/* <input
-            type="radio"
-            value={"USER"}
-            checked={radioValue === "USER"}
-            onChange={(e) => setRadioValue(e.target.value)}
-            name={"user"}
-          />
-          <label htmlFor="user">Ученик</label>
-          <input
-            type="radio"
-            name={"user"}
-            value={"ADMIN"}
-            checked={radioValue === "ADMIN"}
-            onChange={(e) => setRadioValue(e.target.value)}
-          />
-          <label>Учитель</label> */}
         <div className={s.btns}>
           {isLogin ? (
             <div>

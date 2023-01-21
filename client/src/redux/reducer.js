@@ -1,10 +1,10 @@
-const initialState = {
-  posts: [],
-  users: [],
-  userDetail: [],
-  loadingStatus: "idle",
-  isAuth: false,
-};
+// const initialState = {
+//   posts: [],
+//   users: [],
+//   userDetail: [],
+//   loadingStatus: "idle",
+//   isAuth: false,
+// };
 
 // const reducer = (state = initialState, action) => {
 //   switch (action.type) {

@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import {NavLink} from "react-router-dom"
+import { render } from "react-dom";
+import { useDispatch } from "react-redux";
+import {NavLink, useNavigate} from "react-router-dom"
+import { logout } from "../../redux/actions";
 import { ACCOUNT_ROUTE, ADMIN_ROUTE, HOMEWORKS_ROUTE, USERS_ROUTE } from "../../utils/consts";
 import s from "./sidebar.module.scss";
 
@@ -17,6 +20,16 @@ const Sidebar = () => {
   if (isOpen) {
     classes.push(`${s.open}`);
     classesIcon.push(`${s.close}`)
+  }
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const logoutFn = () => {
+    localStorage.removeItem("token")
+    dispatch(logout())
+    navigate("/main")
+    window.location.reload()
   }
 
   return (
@@ -41,6 +54,9 @@ const Sidebar = () => {
           <NavLink to={ADMIN_ROUTE} className={s.item}>
             Создать домашку
           </NavLink>
+          <a onClick={logoutFn} className={s.btn}>
+            Выйти
+          </a>
         </nav>
       </div>
     </div>

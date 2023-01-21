@@ -8,7 +8,7 @@ const CardItem = ({title, body, ...props}) => {
         <span></span>
         <div className={s.title}>{title}</div>
         <div className={s.body}>{body}</div>
-        <NavLink to={"/homeworks/:id"} className={s.btn}>Open</NavLink>
+        <NavLink to={"/"} className={s.btn}>Решить</NavLink>
     </div>
   )
 }

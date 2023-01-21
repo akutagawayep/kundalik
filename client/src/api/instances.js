@@ -6,7 +6,7 @@ const host = axios.create({
 });
 
 const authHost = axios.create({
-  baseURL: URL,
+  baseURL: "http://localhost:5000/auth",
 });
 
 const authInterceptor = (config) => {
@@ -25,3 +25,6 @@ export const authInstance = axios.create({
 export const homeworksInstance = axios.create({
   baseURL: "http://localhost:5000/homeworks",
 });
+
+
+authInstance.interceptors.request.use(authInterceptor);

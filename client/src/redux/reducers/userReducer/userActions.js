@@ -13,7 +13,7 @@ export const fetchedUsers = (value) => ({
 // });
 export const fetchingUsers = (value) => ({
   type: USERS_FETCHING,
-  payload: value,
+  // payload: value,
 });
 // export const fetchingError = (value) => ({ type: "FETCHING_ERROR" });
 

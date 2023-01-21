@@ -101,6 +101,18 @@
       color: #e2e2e2;
       text-decoration: none;
     }
+
+    .btn{
+      position: absolute;
+      bottom: 25px;
+
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+
+      font-size: 20px;
+    }
   }
 }
 

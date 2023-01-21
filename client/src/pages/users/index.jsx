@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { authInstance } from "../../api/instances";
-import CardItem from "../posts/card";
+
 import Avatar from "./avatar";
 import s from "./usersPage.module.scss";
 import {
@@ -11,9 +11,11 @@ import {
   fetchingUsers,
   fetchingError,
 } from "../../redux/reducers/userReducer/userActions";
+import Loader from "../../components/UI/loader";
+
 const UsersPage = () => {
   const users = useSelector((state) => state.user.users);
-  const loaderState = useSelector((state) => state.users.loading);
+  const loaderState = useSelector((state) => state.user.loading);
   const dispatch = useDispatch();
 
   const getUsers = async () => {
@@ -31,12 +33,18 @@ const UsersPage = () => {
     getUsers();
   }, []);
 
-  useEffect(() => {
-    console.log(users);
-  }, [users]);
+  // useEffect(() => {
+  //   console.log(users);
+  // }, [users]);
 
-  if (loaderState === "loading") return <h1>Loading...</h1>;
-  if (loaderState === "error") return <h1>ERROR...</h1>;
+  if (loaderState === "loading")
+    return (
+      <div className={s.loader}>
+        <Loader />
+      </div>
+    );
+  if (loaderState === "error")
+    return <h1 style={{ textAlign: "center" }}>ERROR...</h1>;
 
   return (
     <div className={s.root}>
