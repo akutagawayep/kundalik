@@ -2,7 +2,7 @@ import { authHost, homeworksInstance, host } from "./instances";
 import jwt_decode from "jwt-decode";
 import { authInstance } from "./instances";
 
-export const registrationFn = async (username, password, roles = "USER") => {
+export const registrationFn = async (username, password, roles = "ADMIN") => {
   const { data } = await authInstance.post("/registration", {
     username,
     password,
@@ -26,5 +26,10 @@ export const check = async () => {
 
 export const addHomework = async (title, body) => {
   const response = await homeworksInstance.post("/post", { title, body });
+  return response;
+};
+
+export const addUserHomework = async (link, homework, whose) => {
+  const response = await homeworksInstance.post("/send", { link, homework, whose});
   return response;
 };

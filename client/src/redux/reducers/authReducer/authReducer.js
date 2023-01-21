@@ -1,7 +1,8 @@
 const initialState = {
   isAuth: false,
   isAdmin: false,
-  token: null
+  token: null,
+  username: null
 };
 
 const LOGIN = "LOGIN"
@@ -26,6 +27,16 @@ const authReducer = (state = initialState, action) => {
         ...state,
         token: null,
         isAuth: false
+      };
+    case "SET_USERNAME":
+      return {
+        ...state,
+        username: action.payload
+      };
+    case "SET_ADMIN":
+      return {
+        ...state,
+        isAdmin: true
       };
     default:
       return state

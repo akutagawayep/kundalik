@@ -20,7 +20,7 @@ class postsController {
 
   async postHomework(req, res) {
     try {
-      const { link, whose } = req.body;
+      const { link, whose, homework } = req.body;
       // const candidate = await User.findOne({ whose });
       // if (!) {
       //   return res.status(400).json({
@@ -32,6 +32,7 @@ class postsController {
       const homewrok = new PostHomework({
         link: link,
         whose: whose,
+        homework: homework
       });
 
       await homewrok.save();
