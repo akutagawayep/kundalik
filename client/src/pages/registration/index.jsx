@@ -49,7 +49,7 @@ const RegistartionPage = () => {
           placeholder="Ваше имя пользователя"
         />
         <Inpt
-          type="text"
+          type="password"
           value={user.password}
           onChange={(e) => setUser({ ...user, password: e.target.value })}
           placeholder="Ваш пароль"

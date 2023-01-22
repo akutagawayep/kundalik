@@ -9,6 +9,7 @@ const CardItem = ({ title, body, ...props }) => {
   // const user = useSelector((state) => state.auth.username);
 
   const user = jwtDecode(localStorage.getItem("token"));
+  
 
   const addUserHW = async (link) => {
     console.log(title, link, user.username);
@@ -18,6 +19,8 @@ const CardItem = ({ title, body, ...props }) => {
       link,
       whose: user.username,
     });
+
+    alert("Работа успешно отправлена");
 
     console.log(request);
   };

@@ -12,7 +12,7 @@ const Avatar = ({ name, role, ...props }) => {
     <div className={s.root}>
       <img src={avatar} alt="" className={s.imgUser} onClick={() => navigate(`/users/${name}`)}/>
       <p className={s.name}>{name}</p>
-      <p className={s.role}>{role}</p>
+      <p className={s.role}>{role == "USER" ? "Ученик" : "Учитель"}</p>
     </div>
   );
 };
