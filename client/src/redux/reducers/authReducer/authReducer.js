@@ -2,11 +2,11 @@ const initialState = {
   isAuth: false,
   isAdmin: false,
   token: null,
-  username: null
+  username: null,
 };
 
-const LOGIN = "LOGIN"
-const LOGOUT = "LOGOUT"
+const LOGIN = "LOGIN";
+const LOGOUT = "LOGOUT";
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,26 +20,26 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         token: action.payload,
-        isAuth: true
+        isAuth: true,
       };
     case LOGOUT:
       return {
         ...state,
         token: null,
-        isAuth: false
+        isAuth: false,
       };
     case "SET_USERNAME":
       return {
         ...state,
-        username: action.payload
+        username: action.payload,
       };
     case "SET_ADMIN":
       return {
         ...state,
-        isAdmin: true
+        isAdmin: true,
       };
     default:
-      return state
+      return state;
   }
 };
 

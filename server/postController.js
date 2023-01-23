@@ -21,8 +21,8 @@ class postsController {
   async postHomework(req, res) {
     try {
       const { link, whose, homework } = req.body;
-   
-      const lenght = (await PostHomework1.find()).length
+
+      const lenght = (await PostHomework1.find()).length;
       const homewrok = new PostHomework1({
         id: lenght,
         link: link,
@@ -73,6 +73,13 @@ class postsController {
       console.log(e);
       res.json({ message: "Error message no:", e });
     }
+  }
+  async deleteUserHomeWork(req, res) {
+    const { whose, score, link, homework, id } = req.body;
+    const homewrok = await PostHomework1.findOne({ id });
+
+    await homewrok.deleteOne();
+    return res.json({ message: "Удалено" });
   }
 }
 

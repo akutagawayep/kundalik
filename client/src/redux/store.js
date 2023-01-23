@@ -5,12 +5,6 @@ import {
   postsReducer,
   userReducer,
 } from "./reducers";
-// import {
-//   homeworkReducer,
-//   postsReducer,
-//   userReducer,
-//   authReducer,
-// } from "./reducers";
 
 const rootStore = combineReducers({
   homework: homeworkReducer,
