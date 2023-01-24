@@ -75,10 +75,10 @@ class postsController {
     }
   }
   async deleteUserHomeWork(req, res) {
-    const { whose, score, link, homework, id } = req.body;
+    const { id } = req.body;
     const homewrok = await PostHomework1.findOne({ id });
 
-    await homewrok.deleteOne();
+    await PostHomework1.deleteOne({ id });
     return res.json({ message: "Удалено" });
   }
 }
