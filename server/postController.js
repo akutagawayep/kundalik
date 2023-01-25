@@ -22,9 +22,10 @@ class postsController {
     try {
       const { link, whose, homework } = req.body;
 
-      const lenght = (await PostHomework1.find()).length;
+      const data = await PostHomework1.find();
+      const newID = data[data.length - 1].id + 1;
       const homewrok = new PostHomework1({
-        id: lenght,
+        id: newID,
         link: link,
         whose: whose,
         homework: homework,
