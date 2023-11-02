@@ -16,7 +16,7 @@ mongoose.set("strictQuery", false);
 const runServer = async () => {
   try {
     await mongoose.connect(
-      `mongodb+srv://sandrina:qwerty123@cluster0.pbcttom.mongodb.net/auth_roles?retryWrites=true&w=majority`
+      `mongodb+srv://sandrina:qwerty123@cluster0.pbcttom.mongodb.net/`
     );
 
     app.listen(port, () => {
